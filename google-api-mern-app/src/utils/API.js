@@ -1,11 +1,10 @@
-// import axios from "axios";
+import axios from "axios";
 
-// // Export an object containing methods we'll use for accessing the  API
+// This method retrieves books from the server
+// It accepts a "query" or term to search the api for
 
-// export default {
-//   getSearchedBook: function (userSearch) {
-//     return axios.get(
-//       "https://www.googleapis.com/books/v1/volumes?q=" + userSearch
-//     );
-//   },
-// };
+export default {
+  getSearchedBook: function (query) {
+    return axios.get("/api/books", { params: { q: query } });
+  },
+};
